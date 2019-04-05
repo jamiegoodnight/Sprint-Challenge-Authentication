@@ -37,7 +37,7 @@ class SignUp extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/api/auth/register", this.state)
+      .post("http://localhost:3300/api/register", this.state)
       .then(res => {
         console.log(res);
         this.setState({

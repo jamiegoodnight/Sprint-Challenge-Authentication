@@ -37,7 +37,7 @@ class Login extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/api/auth/login", this.state)
+      .post("http://localhost:3300/api/login", this.state)
       .then(res => {
         console.log(res);
         localStorage.setItem("token", res.data.token);
