@@ -3,6 +3,8 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const db = require("./routesModels");
+const secret = "hihihi";
+// require("../auth/authenticate").jwtKey;
 const { authenticate } = require("../auth/authenticate");
 
 module.exports = server => {
@@ -41,6 +43,7 @@ function login(req, res) {
       .then(user => {
         if (bcrypt.compareSync(password, user.password)) {
           const token = generateToken(user);
+
           res.status(200).json({ message: "LOGGED IN", token });
         } else {
           res.status(401).json({ message: "Invalid username or password!" });
