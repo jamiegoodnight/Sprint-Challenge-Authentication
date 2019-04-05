@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const db = require("./routesModels");
-const secret = "hihihi";
+const secret = process.env.shh || "hihihi";
 // require("../auth/authenticate").jwtKey;
 const { authenticate } = require("../auth/authenticate");
 
